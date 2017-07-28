@@ -1,0 +1,17 @@
+[user]
+	email = keeliizhou@gmail.com
+	name = keelii
+[alias]
+    st = status -sb
+    rs = reset --hard
+    cb = checkout HEAD -- build
+    br = branch
+    co = checkout
+    cm = commit
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)%Creset'
+[diff]
+	tool = meld
+[merge]
+	tool = meld
+[push]
+	default = simple
