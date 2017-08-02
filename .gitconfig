@@ -1,6 +1,6 @@
 [user]
-	email = keeliizhou@gmail.com
-	name = keelii
+    email = keeliizhou@gmail.com
+    name = keelii
 [alias]
     st = status -sb
     rs = reset --hard

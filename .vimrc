@@ -187,6 +187,8 @@ set guioptions-=b
 " 使用内置 tab 样式而不是 gui
 set guioptions-=e
 set nolist
+" set listchars=tab:▶\ ,eol:¬,trail:·,extends:>,precedes:<
+set showbreak=›
 set guifont=Source\ Code\ Pro\ for\ Powerline\ 14
 
 " set guifont=Fantasque_Sans_Mono:h12:cANSI

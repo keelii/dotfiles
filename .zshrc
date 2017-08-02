@@ -1,9 +1,13 @@
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:/usr/local/node/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH=/home/keelii/.oh-my-zsh
 export TERM=xterm-256color
+
+export ANDROID_HOME=$HOME/Android/Sdk
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/platform-tools
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
@@ -86,3 +90,8 @@ eval $(thefuck --alias)
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias fiddler="mono /home/keelii/Downloads/fiddler/Fiddler.exe"
+alias cb="xclip -sel clip"
+alias ss="/home/keelii/Downloads/shadowsocks-gui-0.6.4-linux-x64/start.sh"
+alias vps="ssh root@45.76.107.176"
+alias cp_dotfiles="cp ~/.npmrc ~/.gitconfig ~/.vimrc ~/.tmux.conf ~/.zshrc ~/repo/github/dotfiles"
