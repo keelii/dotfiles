@@ -10,8 +10,8 @@
     cm = commit
     lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)%Creset'
 [diff]
-	tool = meld
+    tool = meld
 [merge]
-	tool = meld
+    tool = meld
 [push]
-	default = simple
+    default = simple

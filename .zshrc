@@ -1,5 +1,9 @@
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:/usr/local/node/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=/usr/local/node/bin:$PATH
+export PATH=/usr/local/android-studio/bin:$PATH
+export PATH=/usr/local/watchman/bin:$PATH
+
 
 # Path to your oh-my-zsh installation.
 export ZSH=/home/keelii/.oh-my-zsh
@@ -90,8 +94,10 @@ eval $(thefuck --alias)
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias open="xdg-open"
 alias fiddler="mono /home/keelii/Downloads/fiddler/Fiddler.exe"
 alias cb="xclip -sel clip"
+alias cl="clear"
 alias ss="/home/keelii/Downloads/shadowsocks-gui-0.6.4-linux-x64/start.sh"
 alias vps="ssh root@45.76.107.176"
-alias cp_dotfiles="cp ~/.npmrc ~/.gitconfig ~/.vimrc ~/.tmux.conf ~/.zshrc ~/repo/github/dotfiles"
+alias cp_dotfiles="cp ~/.npmrc ~/.gitconfig ~/.vimrc ~/.tmux.conf ~/.zshrc ~/.gemrc ~/repo/github/dotfiles"

@@ -15,7 +15,8 @@ Plug 'morhetz/gruvbox'
 Plug 'scrooloose/nerdtree'
 
 Plug 'terryma/vim-multiple-cursors'
-Plug 'godlygeek/tabular'
+Plug 'jiangmiao/auto-pairs'
+
 Plug 'othree/yajs.vim'
 Plug 'kien/ctrlp.vim'
 Plug 'scrooloose/nerdcommenter'
@@ -27,15 +28,18 @@ Plug 'garbas/vim-snipmate'
 Plug 'keelii/vim-snippets'
 
 Plug 'tpope/vim-fugitive'
+Plug 'christoomey/vim-tmux-navigator'
 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-
 Plug 'mkitt/tabline.vim'
-Plug 'christoomey/vim-tmux-navigator'
-Plug 'mitermayer/vim-prettier'
 
-Plug 'Shougo/neocomplete.vim'
+Plug 'godlygeek/tabular'
+Plug 'mitermayer/vim-prettier'
+Plug 'editorconfig/editorconfig-vim'
+
+Plug 'Quramy/tsuquyomi'
+Plug 'leafgarland/typescript-vim'
 
 call plug#end()
 " }}}
@@ -124,6 +128,7 @@ augroup ft_vim
     autocmd FileType vim setlocal foldmethod=marker
     autocmd FileType vim setlocal foldlevel=0
 
+
     " 打开文件总是定位到上次编辑的位置
     autocmd BufReadPost *
       \ if line("'\"") > 1 && line("'\"") <= line("$") |
@@ -194,9 +199,11 @@ set guifont=Source\ Code\ Pro\ for\ Powerline\ 14
 " set guifont=Fantasque_Sans_Mono:h12:cANSI
 set linespace=4
 
+
 " }}}
 
 " Format {{{
+
 set breakindent
 set autoindent
 set smartindent
@@ -230,10 +237,10 @@ nmap <C-h> <C-W>h
 nmap <C-l> <C-W>l
 
 " 正常模式下 alt+j,k,h,l 调整分割窗口大小
-nnoremap <M-j> :resize +5<cr>
-nnoremap <M-k> :resize -5<cr>
-nnoremap <M-h> :vertical resize -5<cr>
-nnoremap <M-l> :vertical resize +5<cr>
+nnoremap <leader>j :resize +5<cr>
+nnoremap <leader>k :resize -5<cr>
+nnoremap <leader>h :vertical resize -5<cr>
+nnoremap <leader>l :vertical resize +5<cr>
 
 " 插入模式移动光标 alt + 方向键
 inoremap <M-j> <Down>
@@ -267,18 +274,18 @@ cmap <S-Insert> <C-R>+
 exe 'inoremap <script> <C-V>' paste#paste_cmd['i']
 exe 'vnoremap <script> <C-V>' paste#paste_cmd['v']
 
-" 打开当前目录 windows
-nmap <silent> <leader>ex :!start explorer %:p:h<CR>
+" 打开当前目录
+nmap <silent> <leader>ex :!xdg-open %:p:h<CR>
 
-" 打开当前目录CMD
-nmap <silent> <leader>cmd :!start cmd /k cd %:p:h<cr>
 " 打印当前时间
 nmap <F3> a<C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR><Esc>
 
 
 " 复制当前文件/路径到剪贴板
-nmap ,fn :let @*=substitute(expand("%"), "/", "\\", "g")<CR>
-nmap ,fp :let @*=substitute(expand("%:p"), "/", "\\", "g")<CR>
+nmap <leader>fn :let @+= expand("%")<CR>
+nmap <leader>fp :let @+= expand("%:p:h")<CR>
+" 复制文本到系统粘贴板
+vmap <leader>cb :w !xclip -sel clip<CR>
 
 "设置切换Buffer快捷键"
 nnoremap <C-left> :bn<CR>
@@ -313,3 +320,8 @@ nnoremap <silent> <C-k> :TmuxNavigateUp<cr>
 nnoremap <silent> <C-l> :TmuxNavigateRight<cr>
 nnoremap <silent> {Previous-Mapping} :TmuxNavigatePrevious<cr>
 " }}}
+
+" Terminal {{{
+" terminal 下无背景颜色
+highlight Normal ctermbg=none
+" --- }}}
