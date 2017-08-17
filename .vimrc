@@ -285,7 +285,7 @@ nmap <F3> a<C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR><Esc>
 nmap <leader>fn :let @+= expand("%")<CR>
 nmap <leader>fp :let @+= expand("%:p:h")<CR>
 " 复制文本到系统粘贴板
-vmap <leader>cb :w !xclip -sel clip<CR>
+vmap <leader>cp :w !xclip -sel clip<CR>
 
 "设置切换Buffer快捷键"
 nnoremap <C-left> :bn<CR>
