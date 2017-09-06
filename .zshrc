@@ -3,6 +3,7 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=/usr/local/node/bin:$PATH
 export PATH=/usr/local/android-studio/bin:$PATH
 export PATH=/usr/local/watchman/bin:$PATH
+export PATH=/home/keelii/.yarn/bin:$PATH
 
 
 # Path to your oh-my-zsh installation.
@@ -101,8 +102,10 @@ alias cl="clear"
 alias cls="clear"
 alias repo="cd ~/repo/"
 alias blog="cd ~/repo/bitbucket/keelii.github.io/"
-alias aui="cd ~/repo/github/dotfiles"
-alias dotfiles="cd ~/repo/bitbucket/aui_ts/"
+alias npmroot="cd /usr/local/node/lib/node_modules"
+alias yarnroot="cd ~/.config/yarn/global/node_modules"
+alias dotfiles="cd ~/repo/github/dotfiles"
+alias aui="cd ~/repo/bitbucket/aui_ts/"
 alias ss="/home/keelii/Downloads/shadowsocks-gui-0.6.4-linux-x64/start.sh"
 alias vps="ssh root@45.63.60.240"
 alias shell234="ssh root@192.168.200.234"
