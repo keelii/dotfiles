@@ -3,11 +3,11 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=/usr/local/node/bin:$PATH
 export PATH=/usr/local/android-studio/bin:$PATH
 export PATH=/usr/local/watchman/bin:$PATH
-export PATH=/home/keelii/.yarn/bin:$PATH
+#export PATH=/home/keelii/.yarn/bin:$PATH
 
 
 # Path to your oh-my-zsh installation.
-export ZSH=/home/keelii/.oh-my-zsh
+export ZSH=~/.oh-my-zsh
 export TERM=xterm-256color
 
 export ANDROID_HOME=$HOME/Android/Sdk
@@ -60,12 +60,11 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git python ruby node npm yarn pip django)
+plugins=(zsh-autosuggestions autojump git python ruby node npm yarn pip django)
 
 source $ZSH/oh-my-zsh.sh
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
 
-eval $(thefuck --alias)
+#eval $(thefuck --alias)
 
 # User configuration
 
@@ -95,20 +94,14 @@ eval $(thefuck --alias)
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias open="xdg-open"
-alias fiddler="mono /home/keelii/Downloads/fiddler/Fiddler.exe"
-alias cb="xclip -sel clip"
+# alias open="xdg-open"
 alias cl="clear"
 alias cls="clear"
-alias repo="cd ~/repo/"
-alias blog="cd ~/repo/bitbucket/keelii.github.io/"
-alias npmroot="cd /usr/local/node/lib/node_modules"
-alias wooo="cd ~/repo/github/wo"
-alias yarnroot="cd ~/.config/yarn/global/node_modules"
-alias dotfiles="cd ~/repo/github/dotfiles"
-alias aui="cd ~/repo/bitbucket/aui_ts/"
-alias ss="/home/keelii/Downloads/shadowsocks-gui-0.6.4-linux-x64/start.sh"
+alias cloc="cloc --exclude-dir=node_modules"
 alias vps="ssh root@45.63.60.240"
 alias shell234="ssh root@192.168.200.234"
 alias shell238="ssh root@192.168.200.238"
-alias cp_dotfiles="cp ~/.npmrc ~/.gitconfig ~/.vimrc ~/.tmux.conf ~/.zshrc ~/.gemrc ~/repo/github/dotfiles"
+alias cp_dotfiles="cp ~/.npmrc ~/.gitconfig ~/.vimrc ~/.tmux.conf ~/.zshrc ~/.gemrc ~/.curlrc ~/Desktop/repo/github.com/dotfiles"
+alias sy_dotfiles="cp .gemrc .gitconfig .npmrc .tmux.conf .vimrc ~/.curlrc .zshrc ~/"
+
+[[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
