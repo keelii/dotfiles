@@ -97,11 +97,12 @@ source $ZSH/oh-my-zsh.sh
 # alias open="xdg-open"
 alias cl="clear"
 alias cls="clear"
+alias tree="tree -I node_modules"
+alias fidder="mono /Users/keelii/Documents/fiddler-mac/Fiddler.exe"
 alias cloc="cloc --exclude-dir=node_modules"
 alias vps="ssh root@45.63.60.240"
 alias shell234="ssh root@192.168.200.234"
 alias shell238="ssh root@192.168.200.238"
 alias cp_dotfiles="cp ~/.npmrc ~/.gitconfig ~/.vimrc ~/.tmux.conf ~/.zshrc ~/.gemrc ~/.curlrc ~/Desktop/repo/github.com/dotfiles"
-alias sy_dotfiles="cp .gemrc .gitconfig .npmrc .tmux.conf .vimrc ~/.curlrc .zshrc ~/"
 
 [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh

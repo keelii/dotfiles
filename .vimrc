@@ -30,9 +30,8 @@ Plug 'keelii/vim-snippets'
 Plug 'tpope/vim-fugitive'
 Plug 'christoomey/vim-tmux-navigator'
 
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'mkitt/tabline.vim'
+Plug 'itchyny/lightline.vim'
+" Plug 'mkitt/tabline.vim'
 
 Plug 'godlygeek/tabular'
 Plug 'mitermayer/vim-prettier'
@@ -40,9 +39,35 @@ Plug 'editorconfig/editorconfig-vim'
 
 Plug 'Quramy/tsuquyomi'
 Plug 'leafgarland/typescript-vim'
+Plug 'mxw/vim-jsx'
 
 call plug#end()
 " }}}
+
+
+" ----- jsx {{{
+let g:jsx_ext_required = 0
+" }}}
+
+" ----- Lightline {{{
+let g:lightline = { 'colorscheme': 'seoul256' }
+let g:lightline.separator = { 'left': '', 'right': '' }
+let g:lightline.subseparator = { 'left': '', 'right': '' }
+let g:lightline.mode_map = {
+    \ 'n' : 'N',
+    \ 'i' : 'I',
+    \ 'R' : 'R',
+    \ 'v' : 'V',
+    \ 'V' : 'V-LINE',
+    \ "\<C-v>": 'V-BLOCK',
+    \ 'c' : 'C',
+    \ 's' : 'SELECT',
+    \ 'S' : 'S-LINE',
+    \ "\<C-s>": 'S-BLOCK',
+    \ 't': 'TERMINAL',
+    \ }
+" }}}
+
 
 " ----- Prettier {{{
 let g:prettier#config#use_tabs = 'false'
@@ -194,7 +219,8 @@ set guioptions-=e
 set nolist
 " set listchars=tab:▶\ ,eol:¬,trail:·,extends:>,precedes:<
 set showbreak=›
-set guifont=Source\ Code\ Pro\ for\ Powerline\ 14
+" set guifont=Source\ Code\ Pro\ for\ Powerline\ 14
+set guifont=Operator\ Mono\ 14
 
 " set guifont=Fantasque_Sans_Mono:h12:cANSI
 set linespace=4
@@ -225,6 +251,8 @@ nmap <leader>0 :set foldlevel=0<cr>
 nmap <leader>1 :set foldlevel=1<cr>
 nmap <leader>2 :set foldlevel=2<cr>
 nmap <leader>3 :set foldlevel=3<cr>
+nmap <leader>t2 :set shiftwidth=2 tabstop=2 softtabstop=2<cr>
+nmap <leader>t4 :set shiftwidth=2 tabstop=4 softtabstop=4<cr>
 
 nmap tn :tabnew<cr>
 nmap th :tabprev<cr>
@@ -237,10 +265,10 @@ nmap <C-h> <C-W>h
 nmap <C-l> <C-W>l
 
 " 正常模式下 alt+j,k,h,l 调整分割窗口大小
-nnoremap <leader>j :resize +5<cr>
-nnoremap <leader>k :resize -5<cr>
-nnoremap <leader>h :vertical resize -5<cr>
-nnoremap <leader>l :vertical resize +5<cr>
+nnoremap <M-j> :resize +5<cr>
+nnoremap <M-k> :resize -5<cr>
+nnoremap <M-h> :vertical resize -5<cr>
+nnoremap <M-l> :vertical resize +5<cr>
 
 " 插入模式移动光标 alt + 方向键
 inoremap <M-j> <Down>
