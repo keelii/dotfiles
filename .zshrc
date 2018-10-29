@@ -1,22 +1,35 @@
+# variable
+GLOBAL_IGNORE_PATTERN="{.www,.idea,.vscode,.sass-cache,build,node_modules,.DS_Store,ept.item.iml}"
+
+
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=/usr/local/node/bin:$PATH
 export PATH=/usr/local/android-studio/bin:$PATH
 export PATH=/usr/local/watchman/bin:$PATH
-#export PATH=/home/keelii/.yarn/bin:$PATH
 
+export PATH=/Users/keelii/Userbin/:$PATH
+export PATH=/usr/local/opt/sphinx-doc/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH=~/.oh-my-zsh
 export TERM=xterm-256color
 
-export ANDROID_HOME=$HOME/Android/Sdk
+
+export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/platform-tools
+
+export PATH=$PATH:/usr/local/flutter/bin
+
+export FZF_DEFAULT_COMMAND="fd --exclude=${GLOBAL_IGNORE_PATTERN} --type f"
+export FZF_DEFAULT_OPTS="--height 40% --layout=reverse --preview '(highlight -O ansi {} || cat {}) 2> /dev/null | head -500'"
+
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="robbyrussell"
+KEYTIMEOUT=1
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -95,14 +108,25 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 # alias open="xdg-open"
+alias pmmm="python manage.py makemigrations"
+alias pm="python manage.py"
+alias pmm="python manage.py migrate"
+alias pmr81="python manage.py runserver"
+
+alias ag="ag --ignore=${GLOBAL_IGNORE_PATTERN}"
+alias fd="fd --exclude=${GLOBAL_IGNORE_PATTERN}"
 alias cl="clear"
 alias cls="clear"
+alias src="source ~/.zshrc"
 alias tree="tree -I node_modules"
 alias fidder="mono /Users/keelii/Documents/fiddler-mac/Fiddler.exe"
 alias cloc="cloc --exclude-dir=node_modules"
 alias vps="ssh root@45.63.60.240"
 alias shell234="ssh root@192.168.200.234"
 alias shell238="ssh root@192.168.200.238"
+alias shell239="ssh root@192.168.200.239"
 alias cp_dotfiles="cp ~/.npmrc ~/.gitconfig ~/.vimrc ~/.tmux.conf ~/.zshrc ~/.gemrc ~/.curlrc ~/Desktop/repo/github.com/dotfiles"
 
 [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
